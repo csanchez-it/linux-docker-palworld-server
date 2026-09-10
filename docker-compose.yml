@@ -1,0 +1,15 @@
+services:
+  palworld-server:
+    image: thijsvanloef/palworld-server-docker:latest
+    container_name: palworld-server
+    restart: unless-stopped
+    ports:
+      - "8211:8211/udp"   # Main game port (UDP)
+      - "27015:27015/udp" # Steam query port (server visibility/browser listing)
+      - "8212:8212/tcp"   # REST API port (player queries, admin actions)
+    env_file:
+      - .env
+    environment:
+      - TZ=America/Monterrey # Syncs container clock with host timezone
+    volumes:
+      - ./data:/palworld/ # Placeholder — original volume path not confirmed, do not treat as final

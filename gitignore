@@ -1,0 +1,16 @@
+# Environment files with real secrets/credentials
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+.vscode/
+.idea/
+
+# Game server runtime data (not part of the documented config)
+saves/
+logs/
+*.log
